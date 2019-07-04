@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@id/localPostFragment"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Local post"/>
+
+    <item
+            android:id="@id/remotePostsFragment"
+            android:icon="@drawable/ic_settings_remote_black_24dp"
+            android:title="Remote Post"/>
+
+</menu>

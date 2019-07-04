@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav"
+        app:startDestination="@id/localPostFragment">
+
+    <fragment android:id="@+id/localPostFragment"
+              android:name="com.example.myapplication.ui.home.LocalPostFragment"
+              android:label="fragment_local_post"
+              tools:layout="@layout/fragment_local_post"/>
+    <fragment android:id="@+id/remotePostsFragment"
+              android:name="com.example.myapplication.ui.home.RemotePostsFragment"
+              android:label="fragment_remote_posts"
+              tools:layout="@layout/fragment_remote_posts"/>
+</navigation>

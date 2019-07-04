@@ -1,0 +1,134 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.hamcrest:hamcrest:2.1'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.nabinbhandari.android:permissions:3.8'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'agency.tango.android:material-intro-screen:0.0.5'
+
+    implementation 'androidx.core:core:1.0.2'
+    // Core library
+    androidTestImplementation 'androidx.test:core:1.2.0'
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+
+    //graph view
+    implementation 'com.jjoe64:graphview:4.2.2'
+
+    //Image Loader
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'net.gotev:uploadservice:2.1'
+
+    //circular list view
+    implementation 'org.lucasr.twowayview:twowayview:0.1.4'
+    implementation 'com.github.mohammadatif:Animatoo:master'
+
+    //Library for converting datamodels to json and back
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //room database
+    def room_version = "2.1.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version" // use kapt for Kotlin
+    implementation "androidx.room:room-rxjava2:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    //work -for synchronizing purposes
+    def work_version = "2.1.0-beta01"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+    implementation "androidx.work:work-rxjava2:$work_version"
+    androidTestImplementation "androidx.work:work-testing:$work_version"
+
+    //RX
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+    def autodispose_version = "1.2.0"
+    implementation "com.uber.autodispose:autodispose-ktx:$autodispose_version"
+    implementation "com.uber.autodispose:autodispose-lifecycle-ktx:$autodispose_version"
+    implementation "com.uber.autodispose:autodispose-android-ktx:$autodispose_version"
+    implementation "com.uber.autodispose:autodispose-android-archcomponents-ktx:$autodispose_version"
+
+    //retrofit - for api calls
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.5.0"
+
+    androidTestImplementation 'com.squareup.okhttp:mockwebserver:2.7.5'
+    testImplementation 'com.squareup.okhttp:mockwebserver:2.7.5'
+
+// Dependency Injection using Koin
+    def koin_version = "2.0.1"
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    androidTestImplementation "org.koin:koin-test:$koin_version"
+    testImplementation "org.koin:koin-test:$koin_version"
+//
+//    devTestDebugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-alpha-2'
+
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    //Db and Network synchronization
+    implementation 'com.nytimes.android:store3:3.1.1'
+
+    def nav_version = "1.0.0"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version"
+}
+repositories {
+    mavenCentral()
+}
